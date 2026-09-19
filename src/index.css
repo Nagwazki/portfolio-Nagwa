@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply bg-background text-textMain font-sans antialiased;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050509;
+}
+::-webkit-scrollbar-thumb {
+  background: #1A1A24;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9B6CFF;
+}
+
+/* Cinematic Glow Utilities */
+.neon-glow {
+  box-shadow: 0 0 30px rgba(155, 108, 255, 0.15);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(155, 108, 255, 0.4);
+}
+
+.glass-panel {
+  @apply bg-surface/60 backdrop-blur-md border border-white/5;
+}
