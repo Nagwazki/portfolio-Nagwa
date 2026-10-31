@@ -59,13 +59,15 @@ export default function ProjectBrowser({ project, onExplore }) {
               ))}
             </div>
             
-            <button 
-              onClick={() => onExplore(project)}
-              className="group/btn flex items-center gap-1 md:gap-2 text-[10px] md:text-xs font-mono text-textMain hover:text-primary transition-colors uppercase tracking-widest"
+            <a 
+              href={project.link || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/btn flex items-center gap-1 md:gap-2 w-fit text-[10px] md:text-xs font-mono text-textMain hover:text-primary transition-colors uppercase tracking-widest cursor-pointer"
             >
               Explore 
               <ExternalLink size={12} className="md:w-[14px] md:h-[14px] transform transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-            </button>
+            </a>
           </div>
         </div>
         

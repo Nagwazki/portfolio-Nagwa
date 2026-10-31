@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+  import React, { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ProjectBrowser from './ProjectBrowser';
@@ -14,7 +14,8 @@ const projectsData = [
     type: 'Design System',
     desc: 'A futuristic React component library with built-in spring physics and cinematic micro-interactions.',
     tech: ['React', 'Framer Motion', 'Tailwind CSS'],
-    image: 'https://images.unsplash.com/photo-1618761714954-0b8cd0026356?auto=format&fit=crop&q=80&w=1000'
+    image: 'photo/adham.png',
+    link: 'https://example.com/'
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ const projectsData = [
     type: 'E-commerce Experience',
     desc: 'E-commerce experience designed and developed with a focus on interaction and smooth transitions.',
     tech: ['Next.js', 'TypeScript', 'GSAP'],
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000'
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000',
+    link: 'https://nagwazki.github.io/Adhammamdoh/'
   },
   {
     id: 3,
@@ -159,7 +161,9 @@ export default function Projects() {
         <div className="relative w-full max-w-6xl px-8 md:px-16 h-[60vh] md:h-[70vh]">
           {projectsData.map((project, i) => (
             <div key={project.id} className="project-panel w-full h-full">
-              <ProjectBrowser project={project} onExplore={setExpandedProject} />
+              <div style={{ pointerEvents: activeProjectIndex === i ? 'auto' : 'none' }} className="w-full h-full">
+                <ProjectBrowser project={project} onExplore={setExpandedProject} />
+              </div>
             </div>
           ))}
         </div>
