@@ -120,7 +120,12 @@ export default function ProjectCaseStudy({ project, onClose }) {
 
         {/* CTA */}
         <div className="stagger-content flex flex-col md:flex-row items-center gap-6 py-24 justify-center border-t border-white/10">
-          <a href="#" className="px-8 py-4 bg-primary text-background font-bold rounded-full hover:bg-white hover:text-primary transition-colors flex items-center gap-2">
+          <a 
+            href={project.link || '#'} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="px-8 py-4 bg-primary text-background font-bold rounded-full hover:bg-white hover:text-primary transition-colors flex items-center gap-2 cursor-pointer"
+          >
             <ExternalLink size={20} /> View Live Website
           </a>
           <a href="#" className="px-8 py-4 border border-white/20 text-white rounded-full hover:border-white transition-colors flex items-center gap-2">

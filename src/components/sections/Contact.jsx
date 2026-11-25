@@ -16,15 +16,21 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     if (e) e.preventDefault();
+    // Egyptian WhatsApp international format: Country Code (20) + Mobile (1225127569)
     const whatsappNumber = "201225127569"; 
     
-    // If input is filled, send their message. If empty, send a default greeting!
+    // If input is filled, send their custom typed message. If empty, send a default greeting!
     const messageContent = inputValue.trim() 
       ? inputValue 
-      : "Hi Nagwa, I'd like to start a project with you!";
+      : "Hi Nagwa, I'd like to work with you on a project!";
       
     const encodedMessage = encodeURIComponent(messageContent);
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    const win = window.open(whatsappUrl, '_blank');
+    if (!win) {
+      window.location.href = whatsappUrl;
+    }
     
     if (inputValue.trim()) {
       setInputValue('');
@@ -67,12 +73,12 @@ export default function Contact() {
                 <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                 <div className="w-3 h-3 rounded-full bg-[#289642]"></div>
-                <span className="ml-2 font-mono text-xs text-muted">guest@noga.dev:~</span>
+                <span className="ml-2 font-mono text-xs text-muted">guest@nevo.dev:~</span>
               </div>
 
               <div className="font-mono text-lg mb-4">
                 <span className="text-primary mr-2">❯</span> 
-                <span className="text-textMain">hello@noga.dev</span>
+                <span className="text-textMain">hello@nevo.dev</span>
               </div>
               
               <form onSubmit={handleSubmit} className="flex items-center font-mono text-lg relative z-20">
@@ -101,28 +107,61 @@ export default function Contact() {
             Send Message...
           </MagneticButton>
 
-          <div className="flex items-center gap-6 mt-4">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="p-3 bg-surface rounded-full text-muted hover:text-[#1877F2] hover:neon-glow hover:-translate-y-1 transition-all duration-300 border border-white/5 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          <div className="flex items-center gap-5 mt-4">
+            {/* GitHub */}
+            <a 
+              href="https://github.com/Nagwazki" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="p-3.5 bg-surface rounded-full text-muted hover:text-white hover:border-white/30 hover:neon-glow hover:-translate-y-1 transition-all duration-300 border border-white/5 flex items-center justify-center"
+              title="GitHub"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
               </svg>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="p-3 bg-surface rounded-full text-muted hover:text-[#E4405F] hover:neon-glow hover:-translate-y-1 transition-all duration-300 border border-white/5 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+
+            {/* LinkedIn */}
+            <a 
+              href="https://www.linkedin.com/in/nagwa-zaki-0354b127b?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="p-3.5 bg-surface rounded-full text-muted hover:text-[#0A66C2] hover:border-[#0A66C2]/40 hover:neon-glow hover:-translate-y-1 transition-all duration-300 border border-white/5 flex items-center justify-center"
+              title="LinkedIn"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+
+            {/* Instagram */}
+            <a 
+              href="https://www.instagram.com/nagwa__zaki?cnvx=MWJ1Y21ka2c5bzN2Yw==" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="p-3.5 bg-surface rounded-full text-muted hover:text-[#E4405F] hover:border-[#E4405F]/40 hover:neon-glow hover:-translate-y-1 transition-all duration-300 border border-white/5 flex items-center justify-center"
+              title="Instagram"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
               </svg>
             </a>
-            <a href="https://tiktok.com" target="_blank" rel="noreferrer" className="p-3 bg-surface rounded-full text-muted hover:text-[#00f2fe] hover:neon-glow hover:-translate-y-1 transition-all duration-300 border border-white/5 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-              </svg>
-            </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="p-3 bg-surface rounded-full text-muted hover:text-white hover:neon-glow hover:-translate-y-1 transition-all duration-300 border border-white/5 flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
-                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+
+            {/* Facebook */}
+            <a 
+              href="https://www.facebook.com/share/19be2qZbfw/" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="p-3.5 bg-surface rounded-full text-muted hover:text-[#1877F2] hover:border-[#1877F2]/40 hover:neon-glow hover:-translate-y-1 transition-all duration-300 border border-white/5 flex items-center justify-center"
+              title="Facebook"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
               </svg>
             </a>
           </div>

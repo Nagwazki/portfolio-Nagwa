@@ -62,12 +62,9 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center gap-2 text-textMain cursor-pointer group" onClick={() => scrollToSection('hero')}>
-            <Terminal size={20} className="text-primary group-hover:text-secondary transition-colors" />
-            <span className="font-mono font-bold tracking-widest text-lg">
-              <span className="text-primary opacity-50">&lt;</span>
-              NOGA
-              <span className="text-primary opacity-50">/&gt;</span>
+          <div className="flex items-center text-textMain cursor-pointer group" onClick={() => scrollToSection('hero')}>
+            <span className="font-mono font-bold tracking-wider text-xl text-textMain group-hover:text-primary transition-colors">
+              nevo.dev
             </span>
           </div>
 

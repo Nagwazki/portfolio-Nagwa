@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio-Nagwa/',
+  base: './',
   server: {
     watch: {
       ignored: ['**/photo/**', '**/public/hero-bg.png', '**/*.png']

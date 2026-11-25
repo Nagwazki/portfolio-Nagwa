@@ -61,10 +61,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-2xl md:text-3xl text-textMain/90 font-medi      um mb-6"
+            className="text-2xl md:text-3xl text-textMain/90 font-medium mb-6"
           >
-            Front-End Developer <br />
-            <span className="text-muted text-xl">& Creative Coder</span>
+            Front-End Developer & Vibe Coder <br />
+            <span className="text-muted text-xl">& AI-Powered Creative Builder</span>
           </motion.h2>
 
           <motion.p
@@ -73,7 +73,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-muted max-w-lg mb-10 text-lg leading-relaxed"
           >
-            I build immersive, interactive digital experiences where code meets creativity. 
+            I build immersive, interactive digital experiences blending modern frontend development with AI-assisted workflows. 
             Crafting the web of tomorrow, today.
           </motion.p>
 

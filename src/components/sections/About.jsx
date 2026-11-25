@@ -14,12 +14,16 @@ export default function About() {
   }, [isInView, setActiveScene]);
 
   const codeString = `const developer = {
-  name: "Noga",
-  role: "Front-End Developer",
-  passion: "Creative Interfaces",
+  name: "Nagwa Zaki",
+  age: 18,
+  education: "University Student",
+  experience: "2+ Years",
+  company: "guardxfly",
+  role: "Front-End Developer & Vibe Coder",
+  mindset: "AI-Augmented Engineering",
   tools: [
-    "HTML", "CSS", "JavaScript", 
-    "GSAP", "React", "Framer Motion"
+    "React", "JavaScript", "Tailwind CSS",
+    "GSAP", "AI Tools & Prompting", "Vite"
   ]
 };`;
 
@@ -34,17 +38,21 @@ export default function About() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
+          <div className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-mono mb-4">
+            ABOUT ME
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Beyond the <span className="text-primary glow-text">Code</span>
           </h2>
-          <div className="space-y-4 text-muted text-lg leading-relaxed">
+          <div className="space-y-4 text-muted text-base md:text-lg leading-relaxed">
             <p>
-              I am a passionate software engineer focused on crafting digital experiences that go beyond standard web design. 
-              I blend technical precision with creative vision.
+              I am an 18-year-old Front-End Developer, <span className="text-primary font-semibold">Vibe Coder</span>, and university student with over <span className="text-white font-semibold">2+ years of hands-on experience</span>. I combine creative intuition with modern AI-driven engineering tools to build high-speed, immersive web experiences.
             </p>
             <p>
-              My approach focuses on fluid motion, immersive storytelling, and pixel-perfect UI execution, turning complex ideas into 
-              intuitive, cinematic interfaces.
+              Having worked at <span className="text-primary font-semibold">guardxfly</span>, I specialize in crafting fluid user interfaces, dynamic micro-interactions, and scalable web platforms.
+            </p>
+            <p>
+              My approach merges technical frontend architecture (React, GSAP, Tailwind) with next-generation AI workflows to rapidly transform bold ideas into production-ready reality.
             </p>
           </div>
         </motion.div>
@@ -86,7 +94,8 @@ export default function About() {
                       __html: line
                         .replace(/const/g, '<span class="text-secondary">const</span>')
                         .replace(/"(.*?)"/g, '<span class="text-green-400">"$1"</span>')
-                        .replace(/name:|role:|passion:|tools:/g, '<span class="text-primary">$&</span>')
+                        .replace(/\b18\b/g, '<span class="text-yellow-400">18</span>')
+                        .replace(/name:|age:|education:|experience:|company:|role:|mindset:|tools:/g, '<span class="text-primary">$&</span>')
                     }} />
                   </motion.div>
                 ))}

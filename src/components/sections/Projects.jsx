@@ -2,28 +2,84 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useScene } from '../SceneBackground';
 import { ExternalLink, Code } from 'lucide-react';
-import adhamImage from './photo/adham.jfif';
+import theTemplateImg from '../../assets/projects/the_template.jpg';
+import adhamMamdouhImg from '../../assets/projects/adham_mamdouh.jpg';
+import habibaKhidrImg from '../../assets/projects/habiba_khidr.jpg';
+import oleCafeImg from '../../assets/projects/ole_cafe.jpg';
+import concordImg from '../../assets/projects/concord.jpg';
+import aymanDesignImg from '../../assets/projects/ayman_design.jpg';
+import janaDesignImg from '../../assets/projects/jana_design.jpg';
 
 const projects = [
   {
     id: 1,
-    name: 'portfolio',
-    type: 'portfolio website',
-    desc: 'A portfolio website for a monter.',
-    tech: ['React', 'Framer Motion', 'Tailwind CSS'],
-    image: adhamImage,
-    link: 'https://nagwazki.github.io/Adhammamdoh/', // <-- ضع رابط الـ Explore / Live Demo هنا
-    github: 'https://github.com/username/project-1' // <-- ضع رابط الكود هنا (اختياري)
+    name: 'Abdelrahman',
+    type: 'Portfolio Website',
+    desc: 'Personal portfolio and branding website for Abdelrahman - Content Creator, Model & Life Coach.',
+    tech: ['HTML5', 'CSS3', 'JavaScript'],
+    image: theTemplateImg,
+    link: 'https://nagwazki.github.io/the_template/',
+    github: 'https://github.com/nagwazki/the_template'
   },
   {
     id: 2,
-    name: 'Neon Commerce',
-    type: 'E-commerce App',
-    desc: 'High-performance storefront featuring 3D product previews and seamless page transitions.',
-    tech: ['Next.js', 'Three.js', 'Stripe'],
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000',
-    link: 'https://example.com/neon-commerce', // <-- ضع رابط الـ Explore / Live Demo هنا
-    github: 'https://github.com/username/neon-commerce' // <-- ضع رابط الكود هنا (اختياري)
+    name: 'Adham Mamdouh',
+    type: 'Video Editor Portfolio',
+    desc: 'Cinematic video editor portfolio showcasing stories through motion, reels, films, and motion graphics.',
+    tech: ['HTML5', 'CSS3', 'JavaScript'],
+    image: adhamMamdouhImg,
+    link: 'https://nagwazki.github.io/Adhammamdoh/',
+    github: 'https://github.com/nagwazki/Adhammamdoh'
+  },
+  {
+    id: 3,
+    name: 'Habiba Khidr',
+    type: 'Video Editor & Monter',
+    desc: 'Portfolio website for Habiba Khidr - Monter turning raw footage into stories that feel.',
+    tech: ['HTML5', 'CSS3', 'JavaScript'],
+    image: habibaKhidrImg,
+    link: 'https://nagwazki.github.io/habiba/',
+    github: 'https://github.com/nagwazki/habiba'
+  },
+  {
+    id: 4,
+    name: 'OLÉ',
+    type: 'Cafe Menu & Portfolio',
+    desc: 'Interactive digital menu and portfolio for Olé Coffee & Croffle with smooth animations and gaming lounge showcases.',
+    tech: ['React', 'Vite', 'Tailwind CSS', 'GSAP'],
+    image: oleCafeImg,
+    link: 'https://ole-cafe.wuaze.com/',
+    github: 'https://github.com/nagwazki/ole-cafe'
+  },
+  {
+    id: 5,
+    name: 'CONCORD',
+    type: 'Marketing & Development Agency',
+    desc: 'Digital marketing and development agency platform - growing brands and building modern digital solutions.',
+    tech: ['Tailwind CSS', 'Vanilla.js', 'GSAP'],
+    image: concordImg,
+    link: 'https://concord.freehosting.dev/',
+    github: 'https://github.com/nagwazki/concord'
+  },
+  {
+    id: 6,
+    name: 'Ayman Elshanwany',
+    type: 'Graphic Design & Marketing',
+    desc: 'Creative portfolio for Ayman - Graphic Designer & Digital Marketing Specialist crafting bold visual identities.',
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'UI/UX'],
+    image: aymanDesignImg,
+    link: 'https://nagwazki.github.io/ayman-elshanwany/',
+    github: 'https://github.com/nagwazki/ayman-elshanwany'
+  },
+  {
+    id: 7,
+    name: 'Jana Ahmed',
+    type: 'Creative Graphic Designer',
+    desc: 'Portfolio website for Jana Ahmed - Creative Graphic Designer & Motion Graphics specialist transforming ideas into visual experiences.',
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'UI/UX'],
+    image: janaDesignImg,
+    link: 'https://nagwazki.github.io/janagraphicdesign/',
+    github: 'https://github.com/nagwazki/janagraphicdesign'
   }
 ];
 
